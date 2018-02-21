@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Turn</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h2>A list of recently-released movies. Each li element should hide individually when clicked.</h2>
+
+<ul>
+    <li>Wonder Woman</li>
+    <li>Hidden Figures</li>
+    <li>The Emoji Movie</li>
+    <li>Spiderman Homecoming</li>
+</ul>
+
+<h2>All the b elements should hide when any b element is clicked</h2>
+
+<P>The <b>really cool</b> JQuery library can make <b>very long</b> JavaScript code
+    much <b>much much</b> more concise, at the expense of loading another library.</P>
+
+<script>
+    // JQuery document ready callback
+    $(function(){
+        // TODO write your code here
+        //Add JQuery to hide each <li> element individually when they are clicked on
+        $('li').click(function () {
+            $(this).hide();
+        });
+        //Add JQuery to hide every <b> element when any <b> element is clicked on
+        // $('b').click(function () {
+        //     $('b').hide()
+        // })
+        //Extra challenge: can you make them fade away instead of immediately disappearing when clicked? (hint: see first example in the slides)
+        $('b').click(function () {
+            $('b').fadeOut(4000)
+        })
+
+
+    });
+</script>
+
+</body>
+
+</html>

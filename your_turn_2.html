@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Turn</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <style>
+    .visited {
+      background-color: lightgray;
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Travel Wishlist</h1>
+
+<h3>Click on a place to 'visit' it</h3>
+
+<ul>
+<li class="place">Rome</li>
+<li class="place">Cairo</li>
+<li class="place">New York</li>
+<li class="place">Rio de Janeiro</li>
+</ul>
+
+<hr>
+
+<P>You have visited <span id="total_visited">0</span> place(s)</P>
+<P>You have <span id="total_not_visited">0</span> place(s) left to visit</P>
+
+<script>
+
+  $(function(){
+
+    // TODO update the numbers in total_visited and total_not_visited spans
+      // TODO select all class=place elements. When they are clicked, add the class "visited"
+      // TODO keep the the numbers in total_visited and total_not_visited spans updated as user selects more places
+      var totalVisited = $('li.visited').length;
+      $('#total_visited').text(totalVisited);
+
+      var totalPlaces = $('.place').length;
+
+      var totalNotVisited = totalPlaces - totalVisited;
+      $('#total_not_visited').text(totalNotVisited);
+
+      function updateCount() {
+
+    var totalVisited = $('li.visited').length;
+    $('#total_visited').text(totalVisited);
+
+    var totalPlaces = $('.place').length;
+
+    var totalNotVisited = totalPlaces - totalVisited;
+    $('#total_not_visited').text(totalNotVisited);
+}
+
+
+      $('.place').click(function () {
+         // console.log('place clicked')
+          $(this).toggleClass('visited')
+          updateCount()
+
+      });
+
+      // TODO Display an alert when all destinations have been visited\
+      // var x=$('#total_visited')
+      // var y=$('.place')
+      // if (x.length=y.length) {
+      //     alert("all destinations have been visited");
+      // }
+
+
+
+  });
+
+</script>
+
+</body>
+
+</html>

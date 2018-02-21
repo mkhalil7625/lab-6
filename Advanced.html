@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>advancedQuetion</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+<h1>To-do List</h1>
+<ul id="to_do"></ul>
+<form id="newItem">
+    <input type="text" id="itemDescription" placeholder="Add " />
+    <input type="submit" id="addButton" value="add" />
+</form>
+    <script>
+        $(function() {
+            var $newItemForm = $('#newItem');
+            var $textInput = $('input:text');
+            $newItemForm.on('submit', function () {
+                //e.preventDefault();
+                //var li = document.createElement("li");
+                var newText=$textInput.val();
+
+
+                li.innerHTML = newText;
+
+                $("#to_do").append('li');
+               // $('li').after('<li>' + newText + '</li>');
+                $textInput.val('');
+
+
+
+
+            });
+        })
+
+    </script>
+</form>
+</body>
+</html>
